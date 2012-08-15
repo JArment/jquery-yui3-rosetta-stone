@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>jQuery - YUI 3 Rosetta Stone</title>
-  <link rel="stylesheet" type="text/css" href="css/rosetta.css">
+  <link rel="stylesheet" href="css/rosetta.css">
 </head>
 <body>
 
@@ -32,51 +32,54 @@
   <li class="screenonly"><a href="#contrib">How to Contribute</a></li>
 </ul>
 
-<h2 id="start">Getting Started</h2>
+<section>
+  <h2 id="start">Getting Started</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th class="jq">jQuery 1.4.2</th>
-      <th class="yui">YUI 3.5.0</th>
-      <th class="notes">Notes</th>
-    </tr>
-  </thead>
+  <table>
+    <thead>
+      <tr>
+        <th class="jq">jQuery 1.4.2</th>
+        <th class="yui">YUI 3.5.0</th>
+        <th class="notes">Notes</th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <tr>
-      <td class="code">
-        <pre class="code jq">$<i>.foo.bar()</i></pre>
-      </td>
-      <td class="code">
-<pre class="code yui">
-YUI().use('<i>node</i>', '<i>module2</i>', '<i>module3</i>', function (Y) {
-  Y<i>.foo.bar()</i>
-});
-</pre>
-      </td>
-      <td class="notes">
-        <p>The <code>jQuery</code> and <code>$</code> objects are globals and the jQuery library itself is statically loaded, so they are available immediately.</p>
+    <tbody>
+      <tr>
+        <td class="code">
+          <pre class="code jq">$<i>.foo.bar()</i></pre>
+        </td>
+        <td class="code">
+  <pre class="code yui">
+  YUI().use('<i>node</i>', '<i>module2</i>', '<i>module3</i>', function (Y) {
+    Y<i>.foo.bar()</i>
+  });
+  </pre>
+        </td>
+        <td class="notes">
+          <p>The <code>jQuery</code> and <code>$</code> objects are globals and the jQuery library itself is statically loaded, so they are available immediately.</p>
 
-        <p>
-          YUI is sandboxed and by default dynamically loaded. The
-          <code>Y</code> object is local to the function you pass as the last
-          argument to <code>YUI().use()</code>. Usually you will put all code
-          that uses YUI inside one of these functions. This function executes
-          <b>after</b> all the referenced modules are loaded and accounted for.
-        </p>
+          <p>
+            YUI is sandboxed and by default dynamically loaded. The
+            <code>Y</code> object is local to the function you pass as the last
+            argument to <code>YUI().use()</code>. Usually you will put all code
+            that uses YUI inside one of these functions. This function executes
+            <b>after</b> all the referenced modules are loaded and accounted for.
+          </p>
 
-        <p>
-          The return value of <code>YUI().use()</code> is also a Y object, which
-          you can assign to a global variable [e.g.
-          <code class="nowrap">var Y = YUI().use(&hellip;);</code>] and debug
-          with it in a JavaScript console.
-        </p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+          <p>
+            The return value of <code>YUI().use()</code> is also a Y object, which
+            you can assign to a global variable [e.g.
+            <code class="nowrap">var Y = YUI().use(&hellip;);</code>] and debug
+            with it in a JavaScript console.
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
 
+<section>
 <h2 id="common" class="section">Common Idioms</h2>
 
 <table>
@@ -647,7 +650,9 @@ Y.bind(<i>fn</i>, <i>context</i>)
 
   </tbody>
 </table>
+</section>
 
+<section>
 <h2 id="selectors">Selectors</h2>
 
 <table>
@@ -928,7 +933,9 @@ if (len) {
     </tr>
   </tbody>
 </table>
+</section>
 
+<section>
 <h2 id="effects">Effects</h2>
 
 <table>
@@ -1003,7 +1010,9 @@ Y.one('#foo').hide(<i>true</i>)
     </tr>
   </tbody>
 </table>
+</section>
 
+<section>
 <h2 id="nodelist">Array vs. NodeList</h2>
 
 <table>
@@ -1113,7 +1122,9 @@ mapped = Y.all(mapped);
     </tr>
   </tbody>
 </table>
+</section>
 
+<section>
 <h2 id="ajax">Ajax</h2>
 
 <table>
@@ -1181,7 +1192,9 @@ Y.one('<i>#message</i>').load('<i>/ajax/test.html</i>', '<i>#foo</i>');
     </tr>
   </tbody>
 </table>
+</section>
 
+<section>
 <h2 id="css">CSS</h2>
 
 <table>
@@ -1332,7 +1345,9 @@ Y.one('<i>#message</i>').load('<i>/ajax/test.html</i>', '<i>#foo</i>');
     </tr>
   </tbody>
 </table>
+</section>
 
+<section>
 <h2 id="sectionid">Language Utilities</h2>
 
 <table>
@@ -1455,40 +1470,43 @@ Y.Lang.isValue(<i>obj</i>)
     </tr>
   </tbody>
 </table>
+</section>
 
 <!-- A template for your copying-and-pasting pleasure: -->
 <!--
-<h2 id="sectionid">Section Name</h2>
+<section>
+  <h2 id="sectionid">Section Name</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th class="jq">jQuery 1.4.2</th>
-      <th class="yui">YUI 3.4.1</th>
-      <th class="notes">Notes</th>
-    </tr>
-  </thead>
+  <table>
+    <thead>
+      <tr>
+        <th class="jq">jQuery 1.4.2</th>
+        <th class="yui">YUI 3.4.1</th>
+        <th class="notes">Notes</th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <tr>
-      <td class="code"><pre class="code jq">$('')</pre></td>
-      <td class="code"><pre class="code yui">Y.all('')</pre></td>
-      <td class="notes">
-        <p>
-        </p>
-      </td>
-    </tr>
+    <tbody>
+      <tr>
+        <td class="code"><pre class="code jq">$('')</pre></td>
+        <td class="code"><pre class="code yui">Y.all('')</pre></td>
+        <td class="notes">
+          <p>
+          </p>
+        </td>
+      </tr>
 
-    <tr>
-      <td class="code"><pre class="code jq">$('')</pre></td>
-      <td class="code"><pre class="code yui">Y.all('')</pre></td>
-      <td class="notes">
-        <p>
-        </p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+      <tr>
+        <td class="code"><pre class="code jq">$('')</pre></td>
+        <td class="code"><pre class="code yui">Y.all('')</pre></td>
+        <td class="notes">
+          <p>
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
 -->
 
 <h2 id="credits">Credits</h2>
@@ -1514,6 +1532,8 @@ Y.Lang.isValue(<i>obj</i>)
     repo</a> and send pull requests.
   </p>
 </div>
+
+<script src="js/rosetta.js"></script>
 
 </body>
 </html>
